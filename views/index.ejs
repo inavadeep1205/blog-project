@@ -1,0 +1,28 @@
+<link  rel="stylesheet" type="text/css" href="styles/index.css" >
+<h1>Welcome to Navadeep's BLOG !</h1>
+<form action="/posts" method="POST">
+    <label>Title</label>
+    <input type="text" name="title">
+    <label>Description</label>
+    <textarea class="txt_area" name="description"></textarea>
+    <br>
+    <input style="margin-top: 15px" type="submit">
+</form>
+    <h2> POSTS </h2>
+    <% for(var x = 0; x < posts.length; x++) { %>
+
+        <form action="/edit" method="post">
+            <div>
+                <h2><%= posts[x].title%></h2>
+                <p><%= posts[x].description%></p>
+            </div>
+            <input type="hidden" name="index" value= "<%= x%>" >
+            <input type="submit" value="Edit Post">
+        </form>
+            <form action="/delete" method="post">
+                <input type="hidden" name="del_index" value= "<%= x%>" >
+                <input type="submit" value="Delete">
+            </form>
+            <hr>
+
+    <% }%>
