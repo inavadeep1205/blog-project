@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link  rel="stylesheet" type="text/css" href="styles/edit.css" >
+</head>
+<body>
+
+<h1>EDIT POST <%= x %></h1>
+
+<form class="post" action="/updated" method="POST">
+    <label>Title</label>
+    <input type="text" name="title" required>
+
+    <label>Description</label>
+    <textarea class="txt_area" name="description" required></textarea>
+
+    <input type="hidden" name="index" value="<%= x %>">
+    <input type="submit" value="UPDATE">
+</form>
+
+</body>
+</html>
